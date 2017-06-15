@@ -3,6 +3,7 @@
   "description": "A demo project for cf-graphql",
   "private": true,
   "scripts": {
+    "client": "react-scripts start",
     "start": "node server.js",
     "deploy-now": "now --public -e SPACE_ID -e CDA_TOKEN -e CMA_TOKEN",
     "deploy-demo-now": "now --public"
@@ -19,9 +20,13 @@
     "cf-graphql": "^0.4.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
-    "express-graphql": "^0.6.6"
+    "express-graphql": "^0.6.6",
+    "react": "^15.6.1",
+    "react-apollo": "^1.4.2",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "now": "^6.2.4"
+    "now": "^6.2.4",
+    "react-scripts": "^1.0.7"
   }
 }

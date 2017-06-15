@@ -77,6 +77,16 @@ You can provide listed values with env variables:
 SPACE_ID=some-space-id CDA_TOKEN=its-cda-token CMA_TOKEN=your-cma-token npm start
 ```
 
+#### Run a FrontEnd using GraphQL
+
+If you also want to see how to integrate GraphQL e.g. in a React technology stack the demo project also contains an application based on the [Apollo framework](https://www.apollodata.com/).
+To check it out, make sure the demo GraphQL server is running (`npm start`) and then start the development server for the React application:
+
+```
+npm run client
+```
+
+The React app will be available at `http://localhost:3000/`.
 
 ### Deploy to [Zeit's `now`](https://zeit.co/now)
 
