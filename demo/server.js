@@ -29,15 +29,15 @@ function useProvidedSpace () {
   const client = cfGraphql.createClient({spaceId, cdaToken, cmaToken});
 
   client.getContentTypes()
-  .then(cfGraphql.prepareSpaceGraph)
-  .then(spaceGraph => {
-    const names = spaceGraph.map(ct => ct.names.type).join(', ');
-    console.log(`Contentful content types prepared: ${names}`);
-    return spaceGraph;
-  })
-  .then(cfGraphql.createSchema)
-  .then(schema => startServer(client, schema))
-  .catch(fail);
+    .then(cfGraphql.prepareSpaceGraph)
+    .then(spaceGraph => {
+      const names = spaceGraph.map(ct => ct.names.type).join(', ');
+      console.log(`Contentful content types prepared: ${names}`);
+      return spaceGraph;
+    })
+    .then(cfGraphql.createSchema)
+    .then(schema => startServer(client, schema))
+    .catch(fail);
 }
 
 // this function is being run if you don't provide credentials to your own space
@@ -52,6 +52,8 @@ function startServer (client, schema) {
   const app = express();
   app.use(cors());
 
+  app.use('/client', express.static('./dist'));
+
   const ui = cfGraphql.helpers.graphiql({title: 'cf-graphql demo'});
   app.get('/', (_, res) => res.set(ui.headers).status(ui.statusCode).end(ui.body));
 
@@ -60,7 +62,10 @@ function startServer (client, schema) {
   app.use('/graphql', graphqlHTTP(ext));
 
   app.listen(port);
-  console.log(`Running a GraphQL server, listening on ${port}`);
+  console.log('Running a GraphQL server!');
+  console.log(`You can access GraphiQL at localhost:${port}`);
+  console.log(`You can use the GraphQL endpoint at localhost:${port}/graphql/`);
+  console.log(`You can have a look at a React Frontend at localhost:${port}/client/`);
 }
 
 function fail (err) {

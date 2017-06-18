@@ -49,7 +49,7 @@ We host an [online demo](https://cf-graphql-demo.now.sh/) for you. You can query
 
 ### Run it locally
 
-This repository contains a demo project. The demo comes with a web server (with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) enabled) providing the GraphQL endpoint but also [an in-browser IDE(GraphiQL)](https://github.com/graphql/graphiql).
+This repository contains a demo project. The demo comes with a web server (with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) enabled) providing the GraphQL, [an in-browser IDE(GraphiQL)](https://github.com/graphql/graphiql) and a React Frontend application using this endpoint.
 
 To run it, clone the repository, install dependencies and start a server:
 
@@ -61,7 +61,8 @@ npm install
 npm start
 ```
 
-Use <http://localhost:4000/graphql/> to query the data from within your application or navigate to <http://localhost:4000> to use the IDE (GraphiQL) for test-querying. Please refer to the [Querying](#querying) section for more details.
+Use <http://localhost:4000/graphql/> to query the data from within your application and navigate to <http://localhost:4000> to use the IDE (GraphiQL) for test-querying. Please refer to the [Querying](#querying) section for more details. If you also want to see how to integrate GraphQL in a React technology stack the demo project also contains an application based on the [Apollo framework](https://www.apollodata.com/).
+To check it out use <http://localhost:4000/client/>.
 
 To use your own Contentful space with the demo, you have to provide:
 
@@ -76,17 +77,6 @@ You can provide listed values with env variables:
 ```
 SPACE_ID=some-space-id CDA_TOKEN=its-cda-token CMA_TOKEN=your-cma-token npm start
 ```
-
-#### Run a FrontEnd using GraphQL
-
-If you also want to see how to integrate GraphQL e.g. in a React technology stack the demo project also contains an application based on the [Apollo framework](https://www.apollodata.com/).
-To check it out, make sure the demo GraphQL server is running (`npm start`) and then start the development server for the React application:
-
-```
-npm run client
-```
-
-The React app will be available at `http://localhost:3000/`.
 
 ### Deploy to [Zeit's `now`](https://zeit.co/now)
 

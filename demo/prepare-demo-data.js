@@ -20,13 +20,13 @@ const cmaToken = process.env.CMA_TOKEN;
 const client = cfGraphql.createClient({spaceId, cdaToken, cmaToken});
 
 client.getContentTypes()
-.then(cfGraphql.prepareSpaceGraph)
-.then(spaceGraph => {
-  const content = JSON.stringify({spaceId, cdaToken, spaceGraph}, null, 2);
-  fs.writeFileSync(path.join(__dirname, 'demo-data.json'), content, 'utf8');
-  console.log('Demo data saved');
-})
-.catch(err => {
-  console.log(err);
-  process.exit(1);
-});
+  .then(cfGraphql.prepareSpaceGraph)
+  .then(spaceGraph => {
+    const content = JSON.stringify({spaceId, cdaToken, spaceGraph}, null, 2);
+    fs.writeFileSync(path.join(__dirname, 'demo-data.json'), content, 'utf8');
+    console.log('Demo data saved');
+  })
+  .catch(err => {
+    console.log(err);
+    process.exit(1);
+  });
