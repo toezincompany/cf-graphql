@@ -61,8 +61,9 @@ npm install
 npm start
 ```
 
-Use <http://localhost:4000/graphql/> to query the data from within your application and navigate to <http://localhost:4000> to use the IDE (GraphiQL) for test-querying. Please refer to the [Querying](#querying) section for more details. If you also want to see how to integrate GraphQL in a React technology stack the demo project also contains an application based on the [Apollo framework](https://www.apollodata.com/).
-To check it out use <http://localhost:4000/client/>.
+Use <http://localhost:4000/graphql/> to query the data from within your application and navigate to <http://localhost:4000> to use the IDE (GraphiQL) for test-querying. Please refer to the [Querying](#querying) section for more details.
+
+If you also want to see how to integrate GraphQL in a React technology stack the demo project also contains an application based on the [Apollo framework](https://www.apollodata.com/). To check it out use <http://localhost:4000/client/>.
 
 To use your own Contentful space with the demo, you have to provide:
 

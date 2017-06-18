@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "client": "react-scripts start",
     "start": "node server.js",
     "deploy-now": "now --public -e SPACE_ID -e CDA_TOKEN -e CMA_TOKEN",
     "deploy-demo-now": "now --public",
